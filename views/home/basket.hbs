@@ -1,0 +1,57 @@
+{{#if items }}
+<div class="shoppingbasket">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <ul class="list-group">
+            <strong>Items in Basket</strong>
+            <table>
+                <tr>
+                    <th><u>Product Title</u></th>
+                    <th><u>Quantity</u></th>
+                    <th><u>Size</u></th>
+                    <th><u>Price</u></th>
+                    <th><u>Increment</u></th>
+                    <th><u>Decrement</u></th>
+                    <th><u>Remove item from Basket</u></th>
+                </tr>
+                <tr>
+                    {{#each items}}
+                    <td style="text-align:center">{{this.item.title}}</td>
+                    <td style="text-align:center">({{this.qty}})</td>
+                    <td style="text-align:center">{{this.size}}</td>
+                    <td style="text-align:center">£{{this.price}}</td>
+                    <td style="text-align:center"><a class="btn btn-secondary" href="/home/basket/{{this.id}}">+</a>
+                    </td>
+                    <td style="text-align:center"><a class="btn btn-secondary"
+                            href="/home/basket/minus/{{this.id}}">-</a></td>
+                    <td style="text-align:center"><a class="btn btn-secondary"
+                            href="/home/basket/delete/{{this.id}}">Delete</a></td>
+                </tr>
+                <form action="/home/checkout" method="GET">
+                    <div class="continuetobasket">
+                        <button type="submit">Continue to Basket</button>
+                    </div>
+                </form>
+                {{/each}}
+            </table>
+
+
+        </ul>
+    </div>
+    <div class="totalprice">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <strong>Total: £{{ totalPrice }}</strong>
+        </div>
+    </div>
+</div>
+<hr>
+{{else}}
+<div class="noitems">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <h2>No Items in Cart</h2>
+    </div>
+</div>
+{{/if}}
+
+<div class="checkoutbtn">
+    <a href="/home/checkout/">Checkout</a>
+</div>

@@ -1,0 +1,157 @@
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">You-do-you Customs</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Dashboard">
+          <a class="nav-link" href="/staff/dashboard">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Charts">
+          <a class="nav-link" href="/staff/listing">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Listings</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tables">
+          <a class="nav-link" href="/staff/messages">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Messages</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Components">
+          <a class="nav-link" href="/staff/orderlist"
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">OrderList</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Example Pages">
+          <a class="nav-link" ref="/staff/finance" 
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Finance</span>
+            </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Menu Levels">
+          <a class="nav-link"  href="/staff/marketing" 
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text"> Marketing</span>
+            </a>
+      </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
+          <a class="nav-link" href="/staff/statistics">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Statistics</span>
+          </a>
+        </li>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
+          <a class="nav-link" href="/staff/imageUploader">
+            <i class=" fa fa-fw fas fa-cloud-download"></i>
+            <span class="nav-link-text">Image Uploader</span>
+          </a>
+        </li>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
+          <a class="nav-link" href="/staff/listingManager">
+            <i class="fa fa-fw far fa-address-card "></i>
+            <span class="nav-link-text">Listings Manager</span>
+          </a>
+        </li>
+        </ul>
+      </div>
+  </nav>
+   <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Listings</a>
+        </li>
+        <li class="breadcrumb-item active"> My Listings Page</li>
+      </ol>
+      <!-- Icon Cards-->
+      <div class="row form1-row">
+        <form action='/staff/listing' method="POST" autocomplete="off" enctype="multipart/form-data">
+    <input type='hidden' name='_id' value='{{listing._id}}'>
+
+   
+        <div class='form-group'>
+            <h3>{{viewTitle}}</h3>
+
+            <ul class="nobullets">
+                <li><label>Product:</label>
+                
+                    <input type='radio' class='form-controll' name="product" id="shoes" value = 'shoes' value='{{listing.product}}'>
+                    <label for="male">shoes</label>
+                     <input type='radio' class='form-controll' name="product" id="shoes" value = 'clothing' value='{{listing.product}}'>
+                     <label for="male">clothing</label><br>
+                     <input type='radio' class='form-controll' name="product" id="shoes" value = 'other' value='{{listing.product}}'>
+                     <label for="male">other</label><br>
+                </li>
+
+                <li><label>Product Type</label>
+                    <input type='text' class='form-controll' name="productType" placeholder="ProductType" value='{{listing.productType}}'>
+                </li>
+
+                <li><label>Photos</label>
+                 <input type="file" class="form-control"  name="images" multiple accept="image/*" value='{{listing.photos}}'>
+                   
+                </li>
+
+                <li><label>Title</label>
+                    <input type='text' class='form-controll' name="title" placeholder="title" value='{{listing.title}}'>
+                </li>
+
+                <li><label>Description</label>
+                    <input type="text" class="form-controll" name="description" placeholder="description" value="{{listing.description}}">
+                </li>
+
+                <li><label>Catagory</label>
+                    <input type="text" class="form-controll" name="catagory" placeholder="catagory"  value="{{listing.catagory}}">
+                </li>
+
+                <li><label>Price</label>
+                    <input type="text" class="form-controll" name="price" placeholder="price"  value="{{listing.price}}">
+                </li>
+
+                <li><label>Quantity</label>
+                    <input type="text" class="form-controll" name="quantity" placeholder="quantity"  value="{{listing.quantity}}">
+                </li>
+
+                <li><label>Variations</label>
+                    <input type="text" class="form-controll" name="variations" placeholder="variations"  value="{{listing.variations}}">
+                </li>
+
+                <li><label>Shipping</label>
+                    <input type="text" class="form-controll" name="shipping" placeholder=" "  value="{{listing.shipping}}">
+                </li>
+
+                <button type="submit" class="btn btn-info">Create Listing</button>
+                Already registered?
+                <a class="btn btn-secondary" href="/staff/listingManager"> View Listings</a>
+            </ul>
+        </div>
+    
+
+</form>
+    
+
+        </div>
+      </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © YDY Customs 2021 </small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top" style="display: none;">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    </div>
+  

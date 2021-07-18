@@ -1,0 +1,50 @@
+
+
+<form action='/user/myProfile/paymentMethod' method="POST" autocomplete="off">
+
+    <input type='hidden' name='_id' value='{{_id}}'>
+
+        <div class='form-group'>
+            
+            <h3>{{viewTitle}}</h3>
+
+            <ul class="nobullets">
+                
+                
+                <li><label>name: </label>
+                <input type='text' class='form-controll' name="name"  value='{{email}}'>
+                </li>
+
+                <li><label>account number: </label>
+                <input type='text' class='form-controll' name="accountNum"  value='{{email}}'>
+                </li>
+
+                <li><label>cvs: </label>
+                    <input type="text" class="form-controll" name="cvs"  value="{{number}}">
+                </li>
+
+                <button type="submit" class="btn btn-info">Add Card </button>
+                
+                
+            </ul>
+        </div>
+    
+
+</form>
+
+<div id="contactus">
+
+{{#each card}}
+
+<div class="gallery">
+
+  
+        <div class="desc">card name :  {{this.name}}</div>
+        <div class="desc">account number :  {{this.accountNumber}}</div>
+        <div class="desc">cvs:  {{this.cvs}}</div>
+    </a>
+</div>
+
+{{/each}}
+
+</div>

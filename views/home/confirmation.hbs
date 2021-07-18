@@ -1,0 +1,40 @@
+<div id="ordertable">
+    <tr>
+        <th>
+            <strong><u>Orders in Basket</u></strong>
+        </th>
+    </tr>
+
+    <table>
+        <tr>
+            <th>Product Title</th>
+            <th>Quantity</th>
+            <th>Size</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            {{#each order.cart}}
+            <td style="text-align:center">{{this.item}}</td>
+            <td style="text-align:center">({{this.qty}})</td>
+            <td style="text-align:center">{{this.size}}</td>
+            <td style="text-align:center">£{{this.price}}</td>
+        </tr>
+        {{/each}}
+        <tr>
+            <hr>
+            <th>Discount</th>
+            <th>Total Price</th>
+        </tr>
+        <tr>
+            <th>-£{{this.discount}}</th>
+            <th>£{{order.totalPrice}}</th>
+        </tr>
+
+    </table>
+
+</div>
+
+<div class="confirmationmessage">
+    <p>Thank you for your order!<br>
+        A confirmation message has been sent to your email!</p>
+</div>

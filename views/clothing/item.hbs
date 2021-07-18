@@ -1,0 +1,42 @@
+
+
+<div id ="itemBox">
+
+
+
+   
+   <div class = "pics">
+      {{#each item.image}}
+     <img src="data:image/png;base64,{{this}}" width="250" height="200">
+      {{/each }}
+  
+
+
+</div>
+ 
+ <div id="itemName">
+   <h2>{{item.title}}</h2>
+   </div>
+<div class = " desc">
+
+    <p>{{item.description}}</p>
+    <p>£{{item.price}}</p>
+
+  <form  action='/clothing/add-to-cart/{{item.id}}' method="POST" autocomplete="off" class = "form">
+
+     <label for="shoesize">Clothing Size:</label>
+      <select id="shoesize" name="shoesize">
+         <option value="S">S (UK)</option>
+         <option value="M">M (UK)</option>
+         <option value="L">L (UK)</option>
+         <option value="XL">XL (UK)</option>
+         </select>
+         <br>
+          <button type = "submit"> Submit </button>
+{{!--          
+<a href="/shoe/add-to-cart/{{item.id}}" method="POST" class="btn btn-primary" role="button">Add To Cart</a> --}}
+
+</form>
+</div>
+
+</div>

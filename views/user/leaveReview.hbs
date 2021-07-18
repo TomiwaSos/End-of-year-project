@@ -1,0 +1,41 @@
+
+
+
+
+<form action='/user/myprofile/reviewProduct/{{product}}' method="POST" autocomplete="off">
+
+    <input type='hidden' name='_id' value='{{id}}'>
+
+   
+        <div class='form-group'>
+            
+            <h3>{{viewTitle}}</h3>
+
+            <ul class="nobullets">
+                
+                <li><label>Username : </label>
+                <input type='hidden' class='form-controll' name="username"  value='{{username}}'>{{username}}
+                </li>
+                
+                <li><label>product: </label>
+                <input type='hidden' class='form-controll' name="product"  value='{{product}}'>{{product}}
+                </li>
+
+                <li><label>Rating : </label>
+                 <input type="number"  name="rating" min="1" max="5">
+                </li>
+
+                <li><label>Review: </label>
+                    <input type="text" class="form-controll" name="review" >
+                </li>
+
+                
+                <a class="btn btn-secondary" href="/user/myprofile/reviewProduct/{{product}}">Back </a>
+
+                <button type="submit" class="btn btn-info">Review Product</button>
+
+            </ul>
+        </div>
+    
+
+</form>

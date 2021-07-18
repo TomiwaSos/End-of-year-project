@@ -1,0 +1,33 @@
+
+
+<h1>Reviews</h1>
+<div id="reviews">
+  <table>
+    <tr>
+      <th colspan="2">
+        <h3><u>Take a look at our reviews!</u></h3>
+      </th>
+    </tr>
+    <tr>
+      <th colspan="2">
+        ---------------------------------------------------------------------------------------
+      </th>
+    </tr>
+    {{#each reviews}}
+    <tr>
+      <td>  <img id="pp" src="data:image/png;base64,{{pp}}" width="50" height="50">username : {{this.username}}</td> 
+    </tr>
+    <tr>
+      <td>Product : {{this.product}}</td> 
+    </tr>
+    <td> rating : {{this.rating}}</td> 
+    <tr>
+      <td> review : {{this.customerReview}}</td> 
+    </tr>
+    <tr>
+      <th colspan="2">
+        ---------------------------------------------------------------------------------------
+      </th>
+    </tr>
+    
+    {{/each}}

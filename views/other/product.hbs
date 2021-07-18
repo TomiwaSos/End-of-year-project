@@ -1,0 +1,15 @@
+
+
+<div id="contactus">
+{{#each product}}
+<input type='hidden' name='productType' value='{{this.[]}}'>
+<div class="gallery">
+
+    <img src="{{this.[]}}.jpg" alt="{{this.[]}}" width="600" height="400">
+    <a class="btn btn-primary btn-sm" href="/clothing/{{this.[]}}">
+        <div class="desc">{{this.[]}}</div>
+    </a>
+</div>
+
+{{/each}}
+</div>

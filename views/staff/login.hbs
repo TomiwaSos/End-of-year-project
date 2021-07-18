@@ -1,0 +1,50 @@
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">You-do-you Customs</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Dashboard">
+          <a class="nav-link" href="/dashboard">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text"> Home Page </span>
+          </a>
+        </li>
+        </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+          </a>
+        </li>
+      </ul>
+      </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Login</a>
+        </li>
+        <li class="breadcrumb-item active">Staff Login</li>
+      </ol>
+<form action='/staff/' method="POST" autocomplete="off">
+   
+
+   
+        <div class='form-group'>
+            <h3>{{viewTitle}}</h3>
+
+            <ul class="nobullets">
+             
+                <li><label>Password</label>
+                    <input type='text' class='form-controll' name="password" placeholder="Password">
+                </li>
+
+                <button type="submit" class="btn btn-info">Submit</button>
+            </ul>
+        </div>
+    
+
+</form>

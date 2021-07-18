@@ -1,0 +1,36 @@
+<div id='custom-profile'>
+
+
+
+
+    <form action='/test/create' method="POST" enctype="multipart/form-data">
+
+
+        <label>name</label>
+        <input type='text' class='form-controll' name="name" placeholder="'e.g Air Force 1'">
+
+
+        {{#each parts}}
+        <div class="parts">
+            <label>part name:</label>
+                <input type='text' class='form-controll' name="parts" placeholder="'e.g Middle Section'">
+            </li>
+
+
+
+            <label>colour:</label>
+                <input type='text' class='form-controll' name="cl" placeholder="'e.g red'">
+
+                <ul></ul><label>image:</label>
+                <input type="file" class="form-control" name="pic" multiple accept="image/*">
+            </ul>
+
+        </div>
+
+
+        {{/each}}
+
+        <button type="submit" class="btn btn-info">Create</button>
+
+</div>
+</form>

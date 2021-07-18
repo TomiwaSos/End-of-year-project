@@ -1,0 +1,16 @@
+<div id="contactus">
+
+<form action='/staff/order' method="POST" autocomplete="off">
+    <h3>{{item.title}}</h3>
+  
+     <img src="data:image/png;base64,{{item.image}}" width="250" height="200">
+    <p>{{productpic.name}}</p>
+    <p>{{item.description}}</p>
+    <p>£{{item.price}}</p>
+
+ 
+
+ <a href="/shoe/add-to-cart/{{item.id}}" class="btn btn-primary" role="button">Add To Cart</a>
+
+</div>
+</form>

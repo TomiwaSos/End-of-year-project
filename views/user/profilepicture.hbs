@@ -1,0 +1,23 @@
+
+
+
+
+
+    <form action='/user/myprofile/profilepicture' method="POST" autocomplete="off" enctype="multipart/form-data">
+ 
+
+   
+        <div class='form-group'>
+           
+                <li><label>Profile Picture</label>
+                   <input type="file" class="form-input"  name="images"  accept="image/*" >
+                </li>
+
+
+
+                <button type="submit" class="btn btn-info">Upload profile picture</button>
+           
+            
+            </ul>
+            <img src="data:image/png;base64,{{pp}}" width="250" height="200">
+        </div>

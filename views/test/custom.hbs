@@ -1,0 +1,57 @@
+{{#each p}}
+
+<img id="testcustomisebox" src='data:image/png;base64,{{this.[0].image}}' width='100%' height='100%'>
+
+{{/each}}
+
+
+
+
+
+
+
+
+<form action='/test/custom/{{name}}' method="POST" autocomplete="off">
+
+  {{#each p }}
+  <input type="hidden" name="basicp" value="{{this.[0].part}}">
+  {{/each}}
+
+  {{#each p }}
+  <input type="hidden" name="basicc" value="{{this.[0].colour}}">
+  {{/each}}
+
+  <div class="customB">
+    {{#each parts}}
+
+    <input type='radio' class='form-controll' name="part" value='{{this.[]}}'>
+    <label for="male">{{this.[]}}</label>
+
+    {{/each}}
+    <br>
+    {{#each colour}}
+
+    <input type='radio' class='form-controll' name="colour" value='{{this.[]}}'>
+    <label for="male">{{this.[]}}</label>
+
+    {{/each}}
+    <br>
+     <button type="submit" class="btn btn-info">Change custom</button>
+  </div>
+
+ 
+
+
+
+</form>
+
+
+
+{{!--
+{{#each p}}
+{{#each [] }}
+
+<a href="/test/custom/{{part}}/{{colour}}" class="btn btn-primary" role="button">{{this.part}} {{this.colour}}</a>
+
+{{/each}}
+{{/each}} --}}

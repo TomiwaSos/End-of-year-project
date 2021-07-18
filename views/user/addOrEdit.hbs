@@ -1,0 +1,45 @@
+
+
+<form action='/user' method="POST" autocomplete="off" enctype="multipart/form-data">
+    <input type='hidden' name='_id' value='{{_id}}'>
+
+   
+        <div class='form-group'>
+            <h3>{{viewTitle}}</h3>
+
+            <ul class="nobullets">
+                <li><label>Profile Picture</label>
+                 <input type="file" class="form-input"  name="images"  accept="image/*" >
+                </li>
+                
+                <li><label>Username</label>
+                    <input type='text' class='form-controll' name="username" placeholder="Username" value='{{user.username}}'>
+                </li>
+
+                <li><label>Password</label>
+                    <input type='password' class='form-controll' name="password" placeholder="Password" value='{{user.password}}'>
+                </li>
+
+                <li><label>Email</label>
+                    <input type='text' class='form-controll' name="email" placeholder="Email" value='{{user.email}}'>
+                </li>
+
+                <li><label>Number</label>
+                    <input type="text" class="form-controll" name="number" placeholder="Number" value="{{user.number}}">
+                </li>
+
+                <li><label>Main Address</label>
+                    <input type="text" class="form-controll" name="mainAddress" placeholder="Main Address"  value="{{user.mainAddress}}">
+                </li>
+
+                
+                
+
+
+                <button type="submit" class="btn btn-info">Register</button>
+                Already registered?
+                <a class="btn btn-secondary" href="/user/login"> login</a>
+            </ul>
+        </div>
+    
+

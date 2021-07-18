@@ -1,0 +1,70 @@
+<h1>Checkout Page</h1>
+
+<div id="ordertable">
+    <strong>Items in Basket</strong>
+    <table>
+        <tr>
+            <th><u>Product Title</u></th>
+            <th><u>Quantity</u></th>
+            <th><u>Size</u></th>
+            <th><u>Price</u></th>
+        </tr>
+        <tr>
+            {{#each items}}
+            <td style="text-align:center">{{this.item.title}}</td>
+            <td style="text-align:center">({{this.qty}})</td>
+            <td style="text-align:center">{{this.size}}</td>
+            <td style="text-align:center">£{{this.price}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
+<br>
+<div id="orderform">
+    <form action="/home/checkout/" method="POST">
+        <label for="fname"><strong><u>Forename</u></strong></label><br>
+        <input type="text" id="fname" name="fname" placeholder="Enter Forename" required><br><br>
+
+        <label for="sname"><strong><u>Surname</u></strong></label><br>
+        <input type="text" id="sname" name="sname" placeholder="Enter Surname" required><br><br>
+
+        <label for="email"><strong><u>Email Address</u></strong></label><br>
+        <input type="email" id="email" name="email" placeholder="Enter Email Address" required><br><br>
+
+        <label for="address"><strong><u>Address</u></strong></label><br>
+        <input type="text" id="address" name="address" placeholder="Enter Address" required><br><br>
+
+        <label for="postcode"><strong><u>Postcode</u></strong></label><br>
+        <input type="text" id="postcode" name="postcode" placeholder="Enter Postcode" required><br><br>
+
+        <label for="discountcode"><strong><u>Discount Code</u></strong></label><br>
+        <input type="text" id="discountcode" name="discountcode" placeholder="Enter Discount Code"><br><br>
+
+        <div id="cardDetails">
+            <label for="cname"><strong><u>Card Name</u></strong></label><br>
+            <input type="text" id="name" name="cfname" placeholder="Enter Card Name" required><br><br>
+
+            <label for="accountnumber"><strong><u>Account Number</u></strong></label><br>
+            <input type="text" id="accountnumber" name="accountnumber" placeholder="Enter Account Number"
+                required><br><br>
+
+            <label for="cvs"><strong><u>CVS</u></strong></label><br>
+            <input type="text" id="cvs" name="cvs" placeholder="Enter CVS" required><br><br>
+        </div>
+
+        <div id="specialRequest">
+            <label for="specialRequest"><strong><u>Special Request</u></strong></label><br>
+            <input type="text" id="specialRequest" name="specialRequest"
+                placeholder="Enter a Special Request..."><br><br>
+        </div>
+        <input type="hidden" name="cart" value="{{cart}}">
+
+        <div class="submitbtn">
+            <button type="submit" value="submit">Submit</button>
+    </form>
+</div>
+
+</style>
+</head>
+
+<body>

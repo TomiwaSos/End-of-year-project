@@ -1,0 +1,69 @@
+<input type='hidden' name="user" value='{{username}}'>
+
+
+
+
+
+
+
+{{!-- this function loads all the exisisting message rooms if you click on the link it will send 
+all the messages in this room to the function below  --}}
+<div id="rooms">
+
+    <div id="roomTitle"> Your Messages</div>
+
+    <a href="/user/myprofile/newMessage"> New Message</a>
+
+    {{#each room}}
+
+    <div id="messageRoom">
+
+
+        Title: {{this.title}}
+     <a href="/user/myprofile/messageCentre/{{this.id}}">Chat</a>
+
+    </div>
+
+    {{/each}}
+
+
+</div>
+
+
+
+{{!-- this function loads the message room the user clicked on with all the message as
+well as who sent them, there is also a text box for users to input a new message
+if they click submit that new message will be added to the message room  --}}
+
+<div class='chatroom'>
+
+
+
+    {{#each chat.messages}}
+
+    <h3>{{this.user}} : </h3>
+   <h5> {{this.txt}}</h5>
+
+  
+    {{/each}}
+  
+    <form action='/user/myprofile/messageCentre/{{chat.id}}' method="POST" autocomplete="off">
+
+
+        <li><label>Message</label>
+            <input type='text' class='form-controll' name="text" placeholder="message">
+
+        </li>
+
+        <button type="submit" class="btn btn-info">Create Message</button>
+
+    </form>
+
+
+
+
+
+</div>
+
+
+</div>

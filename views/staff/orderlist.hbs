@@ -1,0 +1,130 @@
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">You-do-you Customs</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Dashboard">
+          <a class="nav-link" href="/staff/dashboard">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Charts">
+          <a class="nav-link" href="/staff/listing">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Listings</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tables">
+          <a class="nav-link" href="/staff/messages">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Messages</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Components">
+          <a class="nav-link" href="/staff/orderlist"
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">OrderList</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Example Pages">
+          <a class="nav-link" ref="/staff/finance" 
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Finance</span>
+            </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Menu Levels">
+          <a class="nav-link"  href="/staff/marketing" 
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text"> Marketing</span>
+            </a>
+      </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
+          <a class="nav-link" href="/staff/statistics">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Statistics</span>
+          </a>
+        </li>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
+          <a class="nav-link" href="/staff/imageUploader">
+            <i class=" fa fa-fw fas fa-cloud-download"></i>
+            <span class="nav-link-text">Image Uploader</span>
+          </a>
+        </li>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
+          <a class="nav-link" href="/staff/listingManager">
+            <i class="fa fa-fw far fa-address-card "></i>
+            <span class="nav-link-text">Listings Manager</span>
+          </a>
+        </li>
+        </ul>
+      </div>
+  </nav>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#">Orderlist</a>
+      </li>
+      <li class="breadcrumb-item active">My Orderlist</li>
+    </ol>
+    <main>
+
+
+      <div id="order-container">
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Postcode</th>
+              <th>Cart Info</th>
+              <th>Account Number</th>
+              <th>CVS</th>
+              <th>Discount Code</th>
+              <th>Discount Amount</th>
+              <th>Total Price</th>
+              <th>Note</th>
+              <th>Time of Purchase</th>
+            </tr>
+            {{#each list}}
+            <tr>
+              <td>{{this.fname}} {{this.sname}}</td>
+              <td>{{this.email}}</td>
+              <td>{{this.address}}</td>
+              <td>{{this.postcode}}</td>
+              <td>
+
+                <table>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Size</th>
+                  {{#each cart}}
+                  <tr>
+                  <td>{{this.item}}</td><br>
+                  <td>Quantity: ({{this.qty}})</td><br>
+                  <td>Total Price: £{{this.price}}</td><br>
+                  <td>Size: {{this.size}}</td><br>
+            </tr>
+            {{/each}}
+          </table>
+          </td>
+
+          <td>{{this.accountnumber}}</td>
+          <td>{{this.cvs}}</td>
+          <td>{{this.discountcode}}</td>
+          <td>{{this.discount}}</td>
+          <td>{{this.totalPrice}}</td>
+          <td>{{this.specialRequest}}</td>
+          <td>{{this.date}}</td>
+          </tr>
+          {{/each}}
+          </table>
+        </div>
+      </div>
+    </main>
+</div>

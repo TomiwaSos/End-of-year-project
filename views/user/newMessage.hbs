@@ -1,0 +1,29 @@
+
+
+<form action='/user/myprofile/newMessage' method="POST" autocomplete="off">
+   
+        <div class='form-group'>
+            <h3>{{viewTitle}}</h3>
+
+            <ul class="nobullets">
+                <li><label>User</label>
+                    <input type='hidden' name="user"  value='{{username}}'>
+                </li>
+
+                <li><label>Title</label>
+                    <input type='text' class='form-controll' name="title" placeholder="Title" >
+                </li>
+
+                <li><label>Message</label>
+                    <input type='text' class='form-controll' name="text" placeholder="message" >
+                </li>
+
+                    <input type="hidden" name="active" value="true">
+            
+                <button type="submit" class="btn btn-info">Create Message</button>
+               
+                <a class="btn btn-secondary" href="/user/myprofile/messageCentre"> Back</a>
+            </ul>
+        </div>
+    
+

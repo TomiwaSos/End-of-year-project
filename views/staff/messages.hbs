@@ -1,0 +1,116 @@
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">You-do-you Customs</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Dashboard">
+          <a class="nav-link" href="/staff/dashboard">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Charts">
+          <a class="nav-link" href="/staff/listing">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Listings</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tables">
+          <a class="nav-link" href="/staff/messages">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Messages</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Components">
+          <a class="nav-link" href="/staff/orderlist"
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">OrderList</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Example Pages">
+          <a class="nav-link" ref="/staff/finance" 
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">Finance</span>
+            </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Menu Levels">
+          <a class="nav-link"  href="/staff/marketing" 
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text"> Marketing</span>
+            </a>
+      </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
+          <a class="nav-link" href="/staff/statistics">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">Statistics</span>
+          </a>
+        </li>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
+          <a class="nav-link" href="/staff/imageUploader">
+            <i class=" fa fa-fw fas fa-cloud-download"></i>
+            <span class="nav-link-text">Image Uploader</span>
+          </a>
+        </li>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="" data-original-title="Link">
+          <a class="nav-link" href="/staff/listingManager">
+            <i class="fa fa-fw far fa-address-card "></i>
+            <span class="nav-link-text">Listings Manager</span>
+          </a>
+        </li>
+        </ul>
+      </div>
+  </nav>
+    <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Messages</a>
+        </li>
+        <li class="breadcrumb-item active">My Messages</li>
+      </ol>
+
+    <div class = "chat-wrapper">
+        <div class = "collection-list">
+ {{#each room}} 
+            <div class = "collection">
+                
+                 <div class="desc">{{this.title}}</div>
+                 <div class="desc">{{this.user}}</div>
+                 <div class="desc">{{this.messages.[0].txt}}</div>
+                 <a href="/staff/messages/{{this.id}}">Chat</a>
+                
+            </div>
+             {{/each}}
+        </div>
+
+
+        <div class = "right">
+            {{#each chat.messages}} 
+            <div class = "chat-top">
+   <h3>{{this.user}}</h3>
+    </div>
+    
+       
+   <h5> {{this.txt}}</h5>
+    {{/each}}
+    <div class='form-group'>
+    <form action='/staff/messages/{{chat.id}}' method="POST" autocomplete="off">
+{{!-- <input type='hidden' class='form-controll' name="text" value="{{this.chat.message}}"> --}}
+        <div class = "write">
+       <div class = "form-item">
+               <label class = "form-label">Message</label>
+
+            <input type='text' class='form-input' name="text" placeholder="message"> <br>
+
+        <button type="submit" class="btn btn-info">Create Message</button>
+                          </div>
+                      </div>
+                </form>
+           </div>
+        </div>
+    </div>
+    </div>
+</div>

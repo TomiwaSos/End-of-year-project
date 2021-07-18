@@ -1,0 +1,36 @@
+
+
+
+
+<form action='/user/myProfile/myDetails' method="POST" autocomplete="off">
+    <input type='hidden' name='_id' value='{{id}}'>
+
+   
+        <div class='form-group'>
+            
+            <h3>{{viewTitle}}</h3>
+
+            <ul class="nobullets">
+                
+
+                
+                <li><label>Email : </label>
+                <input type='text' class='form-controll' name="email"  placeholder='{{email}}'>
+                </li>
+
+                <li><label>Number : </label>
+                    <input type="text" class="form-controll" name="number"  placeholder="{{number}}">
+                </li>
+
+                <li><label>Main Address : </label>
+                    <input type="text" class="form-controll" name="mainAddress"  placeholder="{{mainAddress}}">
+                </li>
+
+                <button type="submit" class="btn btn-info">update informaiton</button>
+                
+                <a class="btn btn-secondary" href="/user/myprofile">back</a>
+            </ul>
+        </div>
+    
+
+</form>

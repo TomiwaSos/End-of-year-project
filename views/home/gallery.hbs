@@ -1,0 +1,68 @@
+
+<h1 style="top: 150px; left:0px;">Gallery</h1>
+
+<div class="gvanscustomisesection">
+      {{#each customs}}
+      <div id="commentsextionsboxwhole" onload="customisebox()">
+
+            <div id="likesection">
+               <p>Created By:  <a href ="/home/gallery/userProfile/{{this.customname}}"> {{this.customname}}</a> </p>
+                  Likes:
+                  <p class="gallerylikes" id="gallerylikes">{{this.vanlikes}}</p>
+            </div>
+            <img id="gallerypp" src="data:image/png;base64,{{pp}}" style="width:150px; height:150px">
+            <img src="data:image/png;base64,{{this.sole}}" width="100%" height="100%">
+            <img src="data:image/png;base64,{{this.middle}}" width="100%" height="100%">
+            <img src="data:image/png;base64,{{this.frontandback}}" width="100%" height="100%">
+            <img src="data:image/png;base64,{{this.front}}" width="100%" height="100%">
+            <img src="data:image/png;base64,{{this.laces}}" width="100%" height="100%">
+            <img src="data:image/png;base64,{{this.tounge}}" width="100%" height="100%">
+            <img src="data:image/png;base64,{{this.top}}" width="100%" height="100%">
+            <img src="data:image/png;base64,{{this.stripe}}" width="100%" height="100%">
+      
+           <div id="commentsection">
+                  <form id="gallcomments" action='/home/gallery/comment/{{this.id}}' method="POST" autocomplete="off">
+                        <div id="gallerycomment">
+                        {{#each messages}}
+                        <h6 class="commenttext">{{this.user}} : </h6>
+                        <p class="commenttext"> {{this.txt}}</p>
+                        {{/each}}
+                        </div>
+ 
+                        <label>Message:</label>
+                         <input type='text' class='form-controll' name="comment" placeholder="comment">
+                        
+                        <button type="submit" class="btn btn-info">Send Comment</button>
+                  </form>
+ 
+                   <form style="margin-left: 550px;" action='/home/gallery/likes/{{this.id}}' method="POST" autocomplete="off">
+                        <input id='vanlikes' type='hidden' name='vanlikes' value='5'></input>
+            
+                        <button  type="submit" id="likebutton">like</button>
+                  </form>
+
+
+            </div>
+         
+
+
+      </div>
+      {{/each}}
+</div>
+
+<script>
+      function like() {
+            alert("working!!");
+            var likecount = document.getElementById("gallerylikes");
+            likecount.length = 1;
+            }
+
+      function customisebox()
+      {
+            alert("loaded");
+            $("#customisebox").fadein(3000);
+      }
+
+
+      
+</script>

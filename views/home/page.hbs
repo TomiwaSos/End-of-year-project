@@ -1,0 +1,30 @@
+<div id="welcome">
+    <p>
+        Welcome to You Do You Clothing! We are a proud company which strives to create<br>
+        top quality custom products for our customers. Feel free to take a look around<br>
+        our store on our latest designs, or visit the "Create your own" page to<br>
+        customise your own products. We hope you enjoy your stay!
+    </p>
+
+    {{#each record}}
+
+
+
+    <img src=" {{this.name}} " class="img-thumbnail" style="width:100%" alt="">
+    <h1>{{this.name}}</h1>
+
+
+    {{/each}}
+</div>
+
+<div id="welcomeVideo">
+    <iframe width="600" height="400" src="https://www.youtube.com/embed/ntbPRw4Ewr4" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </video>
+    
+    <div id="meetTheMagic">
+        <p>Meet the magic that turns your imagination into a reality</p>
+    </div>
+
+</div>

@@ -1,0 +1,25 @@
+
+
+<form action= '/user/login' method="POST" autocomplete="off">
+
+    <div id="loginBox">
+    <h3>{{viewTitle}}</h3>
+        <div id="username">
+        <label>Username</label>       
+        <input type='text' class='form-controll' name="username" placeholder="Username" value='{{user.username}}'>
+    </div>
+
+         <div id="password">
+        <label>Password</label>
+        <input type='password' class='form-controll' name="password" placeholder="Password" value='{{user.password}}'>
+    </div>
+
+        <div id="loginButton"></div>
+        
+        <button type="submit" class="btn btn-info">Submit</button>
+
+        <a class="btn btn-secondary" href="/user"> Register</a>
+    </div>
+    </div>
+    
+</form> 

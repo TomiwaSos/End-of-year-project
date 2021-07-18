@@ -1,0 +1,358 @@
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+     <!--CUSOMIZATION PAGE -->
+
+     <div id="customiseyourself">
+      <p>
+        Here we allow our customers to be creative in their own way!<br>
+        Here you're able to pick from many different popular brands and models<br>
+        to put your own design onto <b>OR</b> send us your deisn with a product<br>
+        you would like this to be printed on with detailed instructions of<br>
+        how you would like the design to be pritned onto the product and<br>
+        we'll do all of the hard work for you!
+      </p>
+    </div>
+
+    <h2 id="clothingcustomisetitle"> Customise your clothing!</h2>
+
+    <h2 class ="customiseheader designtitle">Choose your design</h2>
+
+
+    <!--CUSTOMIZATION BOX -->
+
+    <div class="clothingcustomisesection">
+
+     <div id="clothingcustomisebox">
+
+      <!--T-Shirt Colour Images --> 
+
+
+
+      <img id="tshirtcustom" src="data:image/png;base64,{{TshirtCustom.image}}" width="100%" height="100%"> 
+     <img id="tshirtcustomblack" src="data:image/png;base64,{{TshirtCustomBlack.image}}" width="100%" height="100%"> 
+     <img id="tshirtcustomred" src="data:image/png;base64,{{TshirtCustomRed.image}}" width="100%" height="100%"> 
+     <img id="tshirtcustomgreen" src="data:image/png;base64,{{TshirtCustomGreen.image}}" width="100%" height="100%"> 
+     <img id="tshirtcustomblue" src="data:image/png;base64,{{TshirtCustomBlue.image}}" width="100%" height="100%"> 
+
+     <!--Album Covers--> 
+      <img id="darktwistedfront" src="data:image/png;base64,{{DarkTwistedFantasyFront.image}}" width="100%" height="100%">
+      <img id="darktwistedback" src="data:image/png;base64,{{DarkTwistedFantasyBack.image}}" width="100%" height="100%"> 
+      <img id="liluzifront" src="data:image/png;base64,{{LilUziFront.image}}" width="100%" height="100%">
+      <img id="liluziback" src="data:image/png;base64,{{LilUziBack.image}}" width="100%" height="100%"> 
+      <img id="longliveasapfront" src="data:image/png;base64,{{LongLiveAsapFront.image}}" width="100%" height="100%">
+      <img id="longliveasapback" src="data:image/png;base64,{{LongLiveAsapBack.image}}" width="100%" height="100%">
+      <img id="section80front" src="data:image/png;base64,{{Section80Front.image}}" width="100%" height="100%">
+      <img id="section80back" src="data:image/png;base64,{{Section80Back.image}}" width="100%" height="100%"> 
+      <img id="manonthemoonfront" src="data:image/png;base64,{{ManOnTheMoonFront.image}}" width="100%" height="100%">
+      <img id="manonthemoonback" src="data:image/png;base64,{{ManOnTheMoonBack.image}}" width="100%" height="100%"> 
+    </div>
+
+
+    
+   <!--CUSTOMIZE BUTTON SLIDESHOW -->
+
+    <div class ="slider" id="clothingcustomiseselector">
+
+              <div class="slide" id="ClothingColours">
+        <h3>T-Shirt Colours</h3>
+
+        <button class ="clothingcustombuttons" id="clothingcustomboxblue" onclick="ClothingBlue()"> </button>
+        <button class ="clothingcustombuttons" id="clothingcustomboxred" onclick="ClothingRed()"> </button>                     
+        <button class ="clothingcustombuttons" id="clothingcustomboxgreen" onclick="ClothingGreen()"> </button>
+        <button class ="clothingcustombuttons" id="clothingcustomboxblack" onclick="ClothingBlack()"> </button>
+        <button class ="clothingcustombuttons" id="clothingcustomboxwhite" onclick="ClothingWhite()"> </button>
+
+      </div>
+
+      <div class="slide" id="ClothingFront">
+        <h3>Front</h3>
+        <button class ="clothingcustombuttons" id="customboxdarktwistedfront" onclick="ClothingDarkTwistedFront()"> </button>
+        <button class ="clothingcustombuttons" id="customboxliluzifront" onclick="ClothingLilUziFront()"> </button>                     
+        <button class ="clothingcustombuttons" id="customboxsection80front" onclick="ClothingSection80Front()"> </button>
+        <button class ="clothingcustombuttons" id="customboxmanonmoonfront" onclick="ClothingManOnTheMoonFront()"> </button>
+        <button class ="clothingcustombuttons" id="customboxasapfront" onclick="ClothingAsapFront()"> </button> <br><br><br>
+
+
+      </div>
+
+      <div class="slide" id="ClothingBack">
+        <h3>Back</h3>
+       <button class ="clothingcustombuttons" id="customboxdarktwistedback" onclick="ClothingDarkTwistedBack()"> </button>
+        <button class ="clothingcustombuttons" id="customboxliluziback" onclick="ClothingLilUziBack()"> </button>                     
+        <button class ="clothingcustombuttons" id="customboxsection80back" onclick="ClothingSection80Back()"> </button>
+        <button class ="clothingcustombuttons" id="customboxmanonmoonback" onclick="ClothingManOnTheMoonBack()"> </button>
+        <button class ="clothingcustombuttons" id="customboxasapback" onclick="ClothingAsapBack()"> </button> <br><br><br>
+
+
+      </div>
+
+   
+
+      <div id="clothingsaveandclear">
+        <button class="savedesign" onclick="savedesign()"> Save Design </button>
+        <button class="redesign" onclick="redesign()"> Redesign </button> 
+        <button class="clearfront" onclick="clearfront()"> Clear Front </button> <br> <br>
+        <button class="clearback" onclick="clearback()"> Clear Back </button>
+        <button type= "button" onclick="Decrease()"> - </button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Are you sure you want to save your design? You wont be able to make any changes.</p>
+            <button class="yessavebutton" onclick="yessave()">yes</button>
+            <button class="nosavebutton" onclick="nosave()">No</button>
+          </div>
+
+        </div>
+
+      </div>
+  <br>
+   <br>
+    <br>
+     <br>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <h2 class ="customiseheader clothingspectitle"> Choose Clothing Specs</h1>
+
+    <div class="tshirtsize">
+
+   
+    <h3>T-Shirt Size</h2>
+      <select>
+    <option>XS</option>
+    <option>S</option>    
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+      </select>
+
+    <button id="checkoutbutton">Checkout</button>
+
+    </div>
+
+
+    </div>
+  
+
+  <script type="text/javascript">
+  //Global Variables
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  //Tshirt Colour Variables
+  var tshirtwhite = document.getElementById("tshirtcustom"); var tshirtblue = document.getElementById("tshirtcustomblue"); var tshirtred = document.getElementById("tshirtcustomred");
+  var tshirtgreen = document.getElementById("tshirtcustomgreen"); var tshirtblack = document.getElementById("tshirtcustomblack");
+
+  //Album Cover Variables
+  var asapfront = document.getElementById("longliveasapfront"); var darktwistedfront = document.getElementById("darktwistedfront"); var moonfront = document.getElementById("manonthemoonfront");
+  var section80front = document.getElementById("section80front"); var uzifront = document.getElementById("liluzifront");
+
+  var asapback = document.getElementById("longliveasapback"); var darktwistedback = document.getElementById("darktwistedback"); var moonback = document.getElementById("manonthemoonback");
+  var section80back = document.getElementById("section80back"); var uziback = document.getElementById("liluziback");
+
+       
+  // Next/previous controls
+  function plusSlides(n) 
+  {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) 
+  {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) 
+  {
+    var i;
+    var slides = document.getElementsByClassName("slide");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length)
+     {
+      slideIndex = 1;
+     }
+    if (n < 1) 
+     {
+      slideIndex = slides.length;
+     }
+      for (i = 0; i < slides.length; i++) 
+      {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++)
+      {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+   }
+
+
+  function savedesign() 
+  {
+   // Get the modal
+   var modal = document.getElementById("myModal");
+  // Get the button that opens the modal
+  var btn = document.getElementById("savedesign");
+  modal.style.display = "block";
+  }
+
+
+  function yessave()
+  {
+   var modal = document.getElementById("myModal");
+   var buttons = document.getElementsByClassName("custombuttons");
+
+   for(var i = 0; i < buttons.length; i++) 
+   {
+     buttons[i].disabled = true;
+     modal.style.display = "none";
+   }
+   
+  }
+
+  function nosave()
+  {
+
+   var modal = document.getElementById("myModal");
+   modal.style.display = "none";
+   
+  }
+
+  function redesign()
+  {
+       var buttons = document.getElementsByClassName("custombuttons");
+       for(var i = 0; i < buttons.length; i++)
+        {
+       buttons[i].disabled = false;
+        }
+  }
+
+
+  function Decrease()
+  {
+      var myImg = document.getElementById("darktwistedfront");
+      var currWidth = myImg.clientWidth;
+        if(currWidth == 0.5)
+        {
+            alert("Maximum zoom-out level reached.");
+        } 
+        else
+        {
+            myImg.style.width = (currWidth - 0.5) + "px";
+        }
+    
+  }
+
+   function ClothingBlue()
+  {
+   tshirtblue.style.display = "block"; tshirtwhite.style.display = "none"; tshirtgreen.style.display = "none"; tshirtred.style.display = "none"; tshirtblack.style.display = "none";
+  }
+
+  function ClothingRed()
+  {
+   tshirtred.style.display = "block"; tshirtwhite.style.display = "none"; tshirtgreen.style.display = "none"; tshirtblue.style.display = "none"; tshirtblack.style.display = "none";
+  }
+
+  function ClothingGreen()
+  {
+   tshirtgreen.style.display = "block"; tshirtwhite.style.display = "none"; tshirtred.style.display = "none"; tshirtblue.style.display = "none"; tshirtblack.style.display = "none";
+  }
+
+  function ClothingBlack()
+  {
+   tshirtblack.style.display = "block"; tshirtwhite.style.display = "none"; tshirtgreen.style.display = "none"; tshirtblue.style.display = "none"; tshirtgreen.style.display = "none";
+  }
+
+  function ClothingWhite()
+  {
+   tshirtwhite.style.display = "block"; tshirtblack.style.display = "none"; tshirtgreen.style.display = "none"; tshirtblue.style.display = "none"; tshirtgreen.style.display = "none";
+  }
+
+  function ClothingDarkTwistedFront()
+  {
+    darktwistedfront.style.display = "block"; uzifront.style.display = "none"; asapfront.style.display = "none"; moonfront.style.display = "none"; section80front.style.display = "none";
+  }
+  
+  function ClothingLilUziFront()
+  {
+    uzifront.style.display = "block"; asapfront.style.display = "none"; moonfront.style.display = "none"; darktwistedfront.style.display = "none"; section80front.style.display = "none";
+  }
+
+  function ClothingSection80Front()
+  {
+    section80front.style.display = "block"; uzifront.style.display = "none"; asapfront.style.display = "none"; darktwistedfront.style.display = "none"; moonfront.style.display = "none";
+  }
+
+  function ClothingManOnTheMoonFront()
+  {
+    moonfront.style.display = "block"; uzifront.style.display = "none"; asapfront.style.display = "none"; darktwistedfront.style.display = "none"; section80front.style.display = "none";
+  }
+
+  function ClothingAsapFront()
+  {
+    asapfront.style.display = "block"; uzifront.style.display = "none"; moonfront.style.display = "none"; darktwistedfront.style.display = "none"; section80front.style.display = "none";
+  }
+
+  function ClothingDarkTwistedBack()
+  {
+    darktwistedback.style.display = "block"; uziback.style.display = "none"; asapback.style.display = "none"; moonback.style.display = "none"; section80back.style.display = "none";
+  }
+  
+  function ClothingLilUziBack()
+  {
+    uziback.style.display = "block"; darktwistedback.style.display = "none"; asapback.style.display = "none"; moonback.style.display = "none"; section80back.style.display = "none";
+  }
+
+  function ClothingSection80Back()
+  {
+   section80back.style.display = "block"; darktwistedback.style.display = "none"; asapback.style.display = "none"; moonback.style.display = "none"; uziback.style.display = "none";
+  }
+
+  function ClothingManOnTheMoonBack()
+  {
+   moonback.style.display = "block"; darktwistedback.style.display = "none"; asapback.style.display = "none"; section80back.style.display = "none"; uziback.style.display = "none";
+  }
+
+  function ClothingAsapBack()
+  {
+    asapback.style.display = "block"; darktwistedback.style.display = "none"; moonback.style.display = "none"; section80back.style.display = "none"; uziback.style.display = "none";
+  }
+
+  function clearfront()
+  {
+    asapfront.style.display = "none"; darktwistedfront.style.display = "none"; moonfront.style.display = "none"; section80front.style.display = "none"; uzifront.style.display = "none";
+  }
+
+  function clearback()
+  {
+    moonback.style.display = "none"; darktwistedback.style.display = "none"; asapback.style.display = "none"; section80back.style.display = "none"; uziback.style.display = "none";
+  }
+
+
+  </script>
+
+
+  </body>
+  </html>  
+    
